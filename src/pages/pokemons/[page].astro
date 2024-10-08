@@ -1,9 +1,11 @@
 ---
 // Codigo Server side only -- Codigo del servidor en momento de construccion
-import MainLayouts from "../../layouts/MainLayouts.astro";
-import Pokemonscard from "../../components/pokemons/pokemonsCard.astro";
 
-import type { PokemonListResponse } from "../../interfaces/pokemon-list.response";
+// para poner el @ en las rutas hay que modificar el tsconfig.json
+import MainLayouts from "@layouts/MainLayouts.astro";
+import Pokemonscard from "@components/pokemonsCard.astro";
+
+import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 import type { GetStaticPaths } from "astro";
 
 const resp = await fetch("https://pokeapi.co/api/v2/pokemon");
@@ -34,29 +36,9 @@ const {page} = Astro.props;
   <section
     class="flex  mt-10 gap-2 items-center"
   >
-        <a 
-            class:list={[
-                'btn',
-                {
-                    disable: !page.url.prev,
-                }
-            ]}
-            href={ page.url.prev }
-        >
-            Anteriores
-        </a>
+        <a class:list={['btn',{disable: !page.url.prev,}]} href={ page.url.prev }>Anteriores</a>
 
-        <a 
-            class:list={[
-                'btn',
-                {
-                    disable: !page.url.next,
-                }
-            ]}
-            href={ page.url.next }
-        >
-            Siguientes
-        </a>
+        <a class:list={['btn',{disable: !page.url.next,}]}href={ page.url.next }>Siguientes</a>
 
         <div class="flex flex-1"></div>
 

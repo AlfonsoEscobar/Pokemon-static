@@ -1,9 +1,9 @@
 ---
 // Codigo Server side only -- Codigo del servidor en momento de construccion
-import MainLayouts from "../layouts/MainLayouts.astro";
-import Pokemonscard from "../components/pokemons/pokemonsCard.astro";
+import MainLayouts from "@layouts/MainLayouts.astro";
+import Pokemonscard from "@components/pokemonsCard.astro";
 
-import type { PokemonListResponse } from "../interfaces/pokemon-list.response";
+import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 const resp = await fetch("https://pokeapi.co/api/v2/pokemon");
 const data = (await resp.json()) as PokemonListResponse;
