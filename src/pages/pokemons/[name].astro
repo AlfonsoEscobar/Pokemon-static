@@ -3,9 +3,9 @@ import type { GetStaticPaths } from "astro";
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 import MainLayouts  from "@layouts/MainLayouts.astro";
-import PokemonsCard from "@components/pokemonsCard.astro";
 
 import { Icon } from "astro-icon/components";
+import PokemonsCard from "@components/Pokemons/pokemonsCard.astro";
 
 const {name} = Astro.params;
 const {url} = Astro.props;

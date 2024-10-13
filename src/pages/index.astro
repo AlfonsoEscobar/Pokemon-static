@@ -1,10 +1,10 @@
 ---
 // Codigo Server side only -- Codigo del servidor en momento de construccion
 import MainLayouts from "@layouts/MainLayouts.astro";
-import Pokemonscard from "@components/pokemonsCard.astro";
+import PokemonsCard from "@components/Pokemons/pokemonsCard.astro";
+import Title from "@components/shared/Title.astro";
 
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
-import Title from "@components/shared/Title.astro";
 
 const resp = await fetch("https://pokeapi.co/api/v2/pokemon");
 const data = (await resp.json()) as PokemonListResponse;
@@ -22,7 +22,7 @@ const title = "Pokemon statict | Home";
   >
     {
       data.results.map((pokemon) => (
-        <Pokemonscard name={pokemon.name} url={pokemon.url} />
+        <PokemonsCard name={pokemon.name} url={pokemon.url} />
       ))
     }
   </section>
