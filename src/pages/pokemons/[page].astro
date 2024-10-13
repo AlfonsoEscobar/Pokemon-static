@@ -7,7 +7,7 @@ import MainLayouts from "@layouts/MainLayouts.astro";
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 import type { GetStaticPaths } from "astro";
 import Title from "@components/shared/Title.astro";
-import PokemonsCard from "@components/Pokemons/pokemonsCard.astro";
+import PokemonsCard from "@components/pokemons/pokemonsCard.astro";
 
 const resp = await fetch("https://pokeapi.co/api/v2/pokemon");
 const data = (await resp.json()) as PokemonListResponse;

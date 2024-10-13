@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 
 import MainLayouts from "@layouts/MainLayouts.astro";
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
-import PokemonsCard from "@components/Pokemons/pokemonsCard.astro";
+import PokemonsCard from "@components/pokemons/pokemonsCard.astro";
 
 const {id} = Astro.params;
 const {name, url} = Astro.props;
