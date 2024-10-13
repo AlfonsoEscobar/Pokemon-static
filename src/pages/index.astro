@@ -6,10 +6,8 @@ import Title from "@components/shared/Title.astro";
 
 import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
-const resp = await fetch("https://pokeapi.co/api/v2/pokemon");
+const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
 const data = (await resp.json()) as PokemonListResponse;
-
-console.log(data);
 
 const title = "Pokemon statict | Home";
 ---
