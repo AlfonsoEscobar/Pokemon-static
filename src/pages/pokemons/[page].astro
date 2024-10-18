@@ -28,7 +28,7 @@ const {page} = Astro.props;
   <Title>Listado Paginado</Title>
   <section 
 	aria-label="Listado Pokemon"
-	class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5"
+	class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-5"
   >
     {page.data.map((pokemon) => <PokemonsCard name={pokemon.name} url={pokemon.url} /> )}
   </section>
@@ -51,8 +51,16 @@ const {page} = Astro.props;
     .btn{
         @apply bg-blue-500 p-2 text-white rounded-md;
     }
+    
+    .btn:hover{
+        @apply bg-blue-600 p-2 text-white rounded-md;
+    }
 
     .disable{
         @apply bg-gray-600 text-gray-400 ;
+    }
+
+    .btn.disable:hover {
+      @apply bg-gray-700 text-gray-400 ; 
     }
 </style>

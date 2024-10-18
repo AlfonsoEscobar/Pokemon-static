@@ -13,13 +13,13 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 
 <!-- href={`/pokemon/${id}`} -->
 <a
-href={`/pokemons/${name}`}
-    class:list={[
-        `rounded flex flex-col items-center`,
-        {
-            border: !isBig,
-        }
-    ]}
+    href={`/pokemons/${name}`}
+        class:list={[
+            `rounded flex flex-col items-center`,
+            {
+                border: !isBig,
+            }
+        ]}
 >
     <img 
         transition:name={`${name}-image`}
@@ -30,7 +30,7 @@ href={`/pokemons/${name}`}
     <span 
         class:list={[
             `capitalize`,
-            isBig && `text-3xl`,
+            isBig && `text-5xl`,
             !isBig && `text-sm`
         ]}
     >

@@ -35,24 +35,19 @@ export const getStaticPaths = (async () => {
     image={imageSrc}
 >
     <section class="mt-10 mx-10 flex flex-col justify-center items-center">
-        <div class="flex flex-row">
-            <div>
-                <button onclick="history.back()" class="text-blue-500">Regresar</button>
-                <h1 class="text-5xl capitalize">{name}</h1>
-            </div>
-    
-            <button id="btn-favorite" class="ml-4" data-name={name} data-id={id}>
-                <Icon data-outline name="heart-outline" size={50} />
-                <Icon data-full class="hidden" name="heart-full" size={50} />
-            </button>  
-        </div>
-
-
         <PokemonsCard name={name} url={url} isBig/>
-            <audio controls class="mt-5">
-                <source src={audioSrc} type="audio/ogg" />
-                Tu navegador no soporta este elemento de audio.
-            </audio>
+        <audio controls class="mt-5 mb-5">
+            <source src={audioSrc} type="audio/ogg" />
+            Tu navegador no soporta este elemento de audio.
+        </audio>
+    </section>
+    <section class="flex mt-10 gap-2 items-center">
+        <button class:list={'btn'} onclick="history.back()">Regresar</button>
+        <div class="flex flex-1"></div>
+        <button id="btn-favorite" class="ml-4" data-name={name} data-id={id}>
+            <Icon data-outline name="heart-outline" size={50} />
+            <Icon data-full class="hidden" name="heart-full" size={50} />
+        </button>  
     </section>
 </MainLayouts>
 
@@ -117,5 +112,12 @@ export const getStaticPaths = (async () => {
 <style>
     #btn-favorite {
         @apply hover:animate-pulse;
+    }
+    .btn{
+        @apply bg-blue-500 p-2 text-white rounded-md;
+    }
+
+    .btn:hover{
+        @apply bg-blue-600 p-2 text-white rounded-md;
     }
 </style>
