@@ -4,12 +4,10 @@ import { FavoritePokemons } from "@components/pokemons/FavoritePokemons";
 import Title from "@components/shared/Title.astro";
 import MainLayouts from "@layouts/MainLayouts.astro";
 
-
+const title = "Pokemon statict | Favoritos";
 ---
 
-<MainLayouts title="Favoritos">
-
+<MainLayouts title={title}>
     <Title>Listado Favoritos</Title>
-
     <FavoritePokemons client:only="solid-js" />
 </MainLayouts>

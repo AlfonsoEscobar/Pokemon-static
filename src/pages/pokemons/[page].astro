@@ -27,8 +27,8 @@ const {page} = Astro.props;
 <MainLayouts title={title}>
   <Title>Listado Paginado</Title>
   <section 
-	aria-label="Listado Pokemon"
-	class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-5"
+    aria-label="Listado Pokemon"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-5"
   >
     {page.data.map((pokemon) => <PokemonsCard name={pokemon.name} url={pokemon.url} /> )}
   </section>
