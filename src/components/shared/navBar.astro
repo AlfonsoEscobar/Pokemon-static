@@ -14,17 +14,78 @@ const currentPath = Astro.url.pathname;
   >
     {
       links.map(({ href, text }) => (
-        <div>
-          <a
-            href={href}
-            class="text-gray-800 dark:text-gray-200 mx-1.5 sm:mx-6"
+        // <div>
+        //   <a
+        //     href={href}
+        //     class="text-gray-800 dark:text-gray-200 mx-1.5 sm:mx-6"
+        //   >
+        //     {text}
+        //   </a>
+          
+        //   {currentPath === href ? console.log(href + " " + currentPath) : console.log("no") }
+        // </div>
+
+        <div class="input">
+          <a 
+            href={href} 
+            class:list={['value',{'active' : currentPath === href}]}
           >
             {text}
           </a>
-          
-          {currentPath === href ? console.log(href + " " + currentPath) : console.log("no") }
         </div>
+
       ))
     }
   </div>
 </nav>
+
+<style>
+  .input {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    justify-content: center;
+    border-radius: 5px;
+    gap: 7.5px;
+  }
+
+.value {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: white;
+  display: flex;
+  position: relative;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  margin-left: 20px;
+}
+
+.value:not(:active):hover,
+.value:focus {
+  background-color: #09274b;
+}
+
+.value:focus,
+.value:active {
+  outline: none;
+}
+
+.value:focus::before,
+.value:active::before {
+  opacity: 1;
+}
+
+/* Estilos para el enlace activo */
+.value.active {
+  /* background-color: #09274b; */
+  @apply bg-slate-800
+}
+
+.value.active::before {
+  opacity: 1;
+}
+
+</style>
