@@ -22,7 +22,7 @@ const currentPath = Astro.url.pathname;
             {text}
           </a>
           
-          {currentPath === href ? <div class="border-b-2 border-blue-500 mx-3" /> : <div class="border-b-2 border-transparent" /> }
+          {currentPath === href ? console.log(href + " " + currentPath) : console.log("no") }
         </div>
       ))
     }
