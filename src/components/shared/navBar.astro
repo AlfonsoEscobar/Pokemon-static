@@ -5,7 +5,12 @@ const links = [
   { href: '/favorites', text: 'Favoritos' },
 ];
 
-const currentPath = Astro.url.pathname;
+let currentPath;
+if (typeof window !== "undefined") {
+  currentPath = window.location.pathname;
+} else {
+  currentPath = Astro.url.pathname;
+}
 ---
 
 <nav class="shadow bg-slate-900">
