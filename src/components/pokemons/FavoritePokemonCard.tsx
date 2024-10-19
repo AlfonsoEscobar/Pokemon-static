@@ -35,7 +35,7 @@ export const FavoritePokemonCard: Component<Props> = ({pokemon}) => {
                         />
                     <p class="capitalize">#{pokemon.id} {pokemon.name}</p>
                 </a>
-                <button onClick={deleteFavorite} class="bg-red-900 p-1 mt-2 rounded-md text-white">
+                <button onClick={deleteFavorite} class="bg-red-900 p-1 mt-2 rounded-md text-white hover:bg-red-800">
                     Borrar
                 </button>
             </div>
