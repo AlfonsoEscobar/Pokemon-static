@@ -19,26 +19,14 @@ if (typeof window !== "undefined") {
   >
     {
       links.map(({ href, text }) => (
-        // <div>
-        //   <a
-        //     href={href}
-        //     class="text-gray-800 dark:text-gray-200 mx-1.5 sm:mx-6"
-        //   >
-        //     {text}
-        //   </a>
-          
-        //   {currentPath === href ? console.log(href + " " + currentPath) : console.log("no") }
-        // </div>
-
         <div class="input">
           <a 
             href={href} 
-            class:list={['value',{'active' : currentPath === href}]}
+            class='value'
           >
             {text}
           </a>
         </div>
-
       ))
     }
   </div>

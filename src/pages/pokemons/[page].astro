@@ -28,13 +28,13 @@ const {page} = Astro.props;
   <Title>Listado Paginado</Title>
   <section 
     aria-label="Listado Pokemon"
-    class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5"
+    class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 m-5"
   >
     {page.data.map((pokemon) => <PokemonsCard name={pokemon.name} url={pokemon.url} /> )}
   </section>
 
   <section
-    class="flex mt-10 gap-2 items-center"
+    class="flex m-4 gap-2 items-center"
   >
         <a class:list={['btn',{disable: !page.url.prev}]} href={ page.url.prev }>Anteriores</a>
 
